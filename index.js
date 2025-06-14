@@ -101,9 +101,9 @@ module.exports = (sequelize) => {
   HistorialArrendamiento.belongsTo(Propiedad, { foreignKey: 'id_propiedad' });
   // Devuelve todos los modelos definidos
 
-  Propiedad.hasMany(ImagenPropiedad, { foreignKey: 'id_propiedad' });
+  Propiedad.hasMany(ImagenPropiedad, {foreignKey: 'id_propiedad', as: 'imagenes'  });
   ImagenPropiedad.belongsTo(Propiedad, { foreignKey: 'id_propiedad' });
-
+  
 
 
   // 🔗 Relaciones cooperativa usando Usuario directamente
