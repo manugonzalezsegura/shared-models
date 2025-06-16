@@ -123,6 +123,18 @@ module.exports = (sequelize) => {
   Cooperativa.hasMany(SolicitudApoyo, { foreignKey: 'id_cooperativa' });
   SolicitudApoyo.belongsTo(Cooperativa, { foreignKey: 'id_cooperativa' });
 
+
+
+
+
+  ContribucionApoyo.belongsTo(SolicitudApoyo, {foreignKey: 'id_solicitud' });   
+
+  SolicitudApoyo.hasMany(ContribucionApoyo, {foreignKey: 'id_solicitud' }); 
+
+  SolicitudApoyo.belongsTo(Usuario, {foreignKey: 'id_solicitante' }); 
+
+  SolicitudApoyo.belongsTo(Cooperativa, {foreignKey: 'id_cooperativa' });
+
   
 
   return {
